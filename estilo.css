@@ -29,3 +29,32 @@ nav ul{
      nav li:hover{
         background-color: black;
      }
+.ofertas h1{
+    text-align: center;
+    background-color:red;
+    color: white;
+    padding: 20px;
+}
+
+.ofertas img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.ofertas {
+    display:flex;
+    align-items: center;
+    padding: 40px;
+}
+.ofer{ 
+    display:flex;
+    align-items: center;
+    padding: 40px;
+    margin: 30px;
+
+
+}
+.ofer P{
+    color: red;
+}
