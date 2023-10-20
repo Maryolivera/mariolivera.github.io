@@ -1,21 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+
+ 
 </head>
 <body>
-    <h1>Tu opinion nos interesa</h1>
-    <form action ="/action_page.php">
-        <label for="fname">Nombre :</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <label for="fmail">Mail :</label><br>
-        <input type="mail" id="fmail" name="fmail"><br>
-        <label for="fcomentario">Comentarios :</label><br>
-        <input type="text" id="fcomentario" name="fcomentario"><br><br>
-        <input type="submit" value="enviar">
+    
+    <h1>Tu opinion nos interesa</h1><br><br>
 
+ <div class="formulario">
+ 
+    <h2>Contacto</h2>
+    <form onsubmit="return validar()">
+        
+        <label for="nombre" >Nombre:</label>
+        <input type="text" id ="nombre" name="nombre"><br>
+
+        <label for="mail">Mail:</label>
+        <input type="email" id="mail" name="mail"><br>
+
+        <label for="mensaje">Mensaje:</label>
+        <input type="text" id="mensaje" name="mensaje"><br><br>
+
+        <input type="submit" value="Enviar">
     </form>
+
+    <ul id="ltaErrores"></ul>
+    <ol id="ltaMensajes"></ol>
+    
+  </div>
+    
+ 
+    
+ <script>
+    function validar(){
+        let sinError=true;
+        let nombre= document.getElementById("nombre");
+        let mensaje=document.getElementById("mensaje");
+        let mail=document.getElementById("mail");
+        let ltaErrores=document.getElementById("ltaErrores");
+        let ltaMensajes=document.getElementById("ltaMensajes");
+
+        ltaErrores.innerHTML="";
+        nombre.classList.remove("error");
+        mensaje.classList.remove("error");
+    
+        if (nombre.value.trim()==""){
+            console.log("nombre invalido");
+            let item=document.createElement("li");
+            ltaErrores.appendChild(item);
+            item.innerHTML="Nombre Invalido";
+            nombre.classList.add("error");
+            sinError=false;
+        }
+    
+        if (mensaje.value.trim()=="" || mensaje.value.length > 200){
+            console.log("mensaje invalido");
+            let item=document.createElement("li");
+            ltaErrores.appendChild(item);
+            item.innerHTML="Mensaje invalido";
+            mensaje.classList.add("error");
+            sinError=false;
+        }
+
+        if(sinError){
+            let item=document.createElement("li");
+            ltaMensajes.appendChild(item);
+            item.innerHTML=nombre.value+" <b>escribio :</b>"+mensaje.value;
+            mensaje.value="";
+        
+            mensaje.focus();
+        }
+    
+    
+        
+        return false;
+        
+    
+    }
+ </script>
+    
+    
+
 </body>
 </html>
