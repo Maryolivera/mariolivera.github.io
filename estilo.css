@@ -1,6 +1,20 @@
 *{padding: 0;
   margin: 0;
 }
+
+.fondo h3{
+    background-image: url("imagenes/fondo1.jpg");
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 450px;
+    color :aliceblue
+
+
+
+}
+
 h1 {
     text-align: center;
     background-color:red;
@@ -29,6 +43,38 @@ nav ul{
      nav li:hover{
         background-color: black;
      }
+     
+        
+      
+        
+        
+     
+     .inicio{
+        background-color: blue;float: right;
+        width: 50%;
+
+     }
+     .logo{
+        margin: 20px;
+        display: flex;
+        width: 50%;
+        border: 1px solid red;
+        
+
+
+     }
+     .logo img{ 
+        
+        padding-left: 5px;
+        width: 300px;
+        height: 400px;
+        border-radius: 50%;
+        object-fit: cover;
+        
+    
+    
+
+     }
 .ofertas h1{
     text-align: center;
     background-color:red;
@@ -37,10 +83,17 @@ nav ul{
 }
 
 .ofertas img{
+    
+    margin: 20%;
+    align-items: center;
     width: 200px;
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
+}
+.ofertas img:hover
+{transform: scale(1.5);
+
 }
 .ofertas {
     display:flex;
@@ -71,6 +124,7 @@ form label{
 }
 
 form{
+    height: 400px;
     background-color: gray;
     margin: 0 auto;
     width: 300px;
