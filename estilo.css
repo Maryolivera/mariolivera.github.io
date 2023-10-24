@@ -9,11 +9,12 @@
     background-size: cover;
     background-attachment: fixed;
     height: 450px;
-    color :aliceblue
+    color :aliceblue;
 
 
 
 }
+
 
 h1 {
     text-align: center;
@@ -143,8 +144,47 @@ form input{
     text-align: center;
 }
 
+.contenedor img{
+    width: 720px;
+    height: 580px;
+    padding: 30px;
 
-
+}
+.contenedor{
+   display: flex;
+   flex-direction:row ;
+   justify-content: center;
+   align-items: center;
+   margin-top: 30px;
+}
+.botones{
+    font-size: 30px;
+    width: 70px;
+    height: 70 px;
+    line-height: 70 px;
+    border-radius: 50%;
+    background-color:black;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    color: blueviolet;
+    box-shadow: 0,0,10px rgb(255,255,255,.6);
+    -webkit-transition: all .3s ease ;
+    -o-transition: all.3s ease;
+    transition: all .3s ease;
+}
+.botones:hover{
+    cursor:pointer;
+    transform: scale(1.2,1.1);
+}
+.atras{
+    left: 2%;
+    top: calc(50%-70px);
+}
+.adelante{
+    right: 2%;
+    top: calc(50%-70px);
+}
 
 
 

@@ -1,25 +1,36 @@
-<script>
-function validar(){
+var imagenes=[ " imagenes/foto1.jpg" ,"imagenes/foto2.jpg","imagenes/foto3.jpg","imagenes/foto4.jpg","imagenes/foto5.jpg"];
+cont=0;
 
-	let nombre= document.getElementById("nombre");
-	let mensaje=document.getElementById("mensaje");
-	let mail=document.getElementById("mail");
-	let ltaErrores=document.getElementById("ltaErrores");
+function carrousel(contenedor){
+	contenedor.addEventListener('click',e =>
+	{
+		let atras=contenedor.querySelector('.atras'),
+		adelante=contenedor.querySelector('.adelante'),
+		img=contenedor.querySelector('img'),
+		tgt=e.target;
 
-	if (nombre.value==""){
-		console.log("nombre invalido")
-	}
+		if (tgt ==atras){
+			if(cont>0){
+				img.src=imagenes[cont-1];
+				cont--;
+			}else{
+				img.src=imagenes[imagenes.length-1]
+				cont=imagenes.length-1;
+			}
 
-	if (mensaje.value=="" || mensaje.value.length > 200){
-		console.log("mensaje invalido")
-	}
+		} else if(tgt== adelante){
+			if(cont<imagenes.length-1){
+			img.src=imagenes[cont+1];
+			cont++;
+		}else{
+			img.src=imagenes[0];
+			cont=0;
+		}
+	 }
 
-
-	let item=document.createElement("li");
-	ltaErrores.appendChild(item);
-	item.innerHTML="";
-	return false;
-	
-
+	});
 }
-</script>
+document.addEventListener("DOMContentLoaded",() => {
+	let contenedor=document.querySelector('.contenedor');
+	carrousel(contenedor);
+});
