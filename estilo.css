@@ -156,6 +156,13 @@ form input{
 }
 
 
+ img{
+    width: 100%;
+    font-size:small;
+    display: flex;
+    justify-content: space-between;
+    
+}
 
 .final{
     width: 100%;
