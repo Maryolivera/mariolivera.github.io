@@ -1,6 +1,9 @@
 *{padding: 0 px;
   margin: 0 px;
+  font-family: calibri;
+
 }
+
 
 .fondo h3{
     background-image: url("imagenes/fondo1.jpg");
@@ -10,9 +13,6 @@
     background-attachment: fixed;
     height: 450px;
     color :aliceblue;
-
-
-
 }
 
 
@@ -46,40 +46,9 @@ nav ul{
      }
      
         
-      
-        
-        
-     
-     .inicio{
-        background-color: blue;float: right;
-        width: 50%;
 
-     }
-     .logo{
-        margin: 20px;
-        display: flex;
-        width: 50%;
-        border: 1px solid red; 
-
-        
-
-
-     }
-     .logo img{ 
-        
-        padding-left: 5px;
-        width: 300px;
-        height: 400px;
-        border-radius: 50%;
-        object-fit: cover;
-        
-    
-    
-
-     }
 .ofertas h1{
     text-align: center;
-    background-color:red;
     color: white;
     padding: 20px;
 }
@@ -110,13 +79,10 @@ nav ul{
 
 
 }
-.ofer P{
-    color: red; 
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
 
+.ofer p{
+    color: red;
 }
-*{font-family: calibri;}
 
 form label{
     display: block;
@@ -189,13 +155,22 @@ form input{
     top: calc(50%-70px);
 }
 
+
+
 .final{
     width: 100%;
     font-size: small;
     display: flex;
     justify-content: space-between;
     background-color: gray;
-
-    padding: 10px;
+    padding: 20px;
 }
+ .info{
+    text-align:center;
 
+ }
+
+ .info h3{
+    font-size:1rem;
+    margin-bottom:5px;
+ }

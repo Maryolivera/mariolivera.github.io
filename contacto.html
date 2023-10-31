@@ -15,7 +15,6 @@
     
      <h2>LA MEJOR CALIDAD AL MENOR PRECIO</h2>
          
-    </div>
 
      <nav> 
         <ul>
@@ -65,6 +64,7 @@
         ltaErrores.innerHTML="";
         nombre.classList.remove("error");
         mensaje.classList.remove("error");
+        mail.classList.remove("error");
     
         if (nombre.value.trim()==""){
             console.log("nombre invalido");
@@ -84,11 +84,28 @@
             sinError=false;
         }
 
+        
+        let er= /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+        if( !er.test(mail.value))
+        {
+             console.log("mail invalido");
+             let item=document.createElement("li");
+             ltaErrores.appendChild(item);
+             item.innerHTML="mail invalido";
+             mail.classList.add("error")
+             sinError=false;
+        }
+        
+
+
         if(sinError){
             let item=document.createElement("li");
             ltaMensajes.appendChild(item);
             item.innerHTML=nombre.value+" <b>escribio :</b>"+mensaje.value;
             mensaje.value="";
+            mail.value="";
+            nombre.value="";
+           
         
             mensaje.focus();
         }
